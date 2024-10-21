@@ -1,0 +1,78 @@
+openapi: "3.0.0"
+
+info:
+  title: "Shop Review API"
+  version: "1.0.0"
+
+servers: []
+
+tags: []
+
+paths:
+  "/shops/{shopId}/reviews":
+    get:
+      summary: "Get shop review"
+      description: "Get specified shop's reviews"
+      parameters:
+      - $ref: "#/components/parameters/ShopId"
+      responses:
+        "200":
+          description: "Success operation"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Review"
+    post:
+      summary: "Create new review"
+      description: "Create specified shop's new review"
+      parameters:
+      - $ref: "#/components/parameters/ShopId"
+      requestBody:
+        description: "Contents of review"
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Review"
+      responses:
+        "201":
+          description: "Success operation"
+        "400":
+          $ref: "#/components/responses/400-BadRequest"
+
+components:
+  schemas:
+    Review:
+      type: object
+      properties:
+        score: { type: integer }
+        comment: { type: string }
+    ClientError:
+      type: object
+      properties:
+        code: { type: string }
+        type: { type: string }
+        message: { type: string }
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              field: { type: string }
+              code: { type: string }
+  parameters:
+    ShopId:
+      name: shopId
+      in: path
+      description: "Shop identifier"
+      required: true
+      schema: { type: string }
+  responses:
+    400-BadRequest:
+      description: "Client side error"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ClientError"

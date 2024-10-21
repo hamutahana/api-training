@@ -1,0 +1,26 @@
+openapi: "3.0.3"
+
+info:
+  title: "Empty API"
+  version: "1.0.0"
+
+servers: []
+
+# APIを分類するタグ
+tags:
+- name: "users"
+  description: "User operation"
+
+paths:
+  "/users":
+    get:
+      summary: "Get user list"
+      # タグの付与
+      tags: ["users"]
+      responses:
+        "200":
+          description: "Success response"
+
+security: []
+
+components: {}

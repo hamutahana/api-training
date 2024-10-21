@@ -1,0 +1,25 @@
+# OpenAPIのバージョン
+# 必須
+openapi: "3.0.3"
+
+# APIのメタデータ
+# 必須
+info:
+  title: "Empty API"
+  version: "1.0.0"
+
+# APIを提供するサーバーを定義
+servers: []
+
+# APIを分類するタグ
+tags: []
+
+# APIが利用可能なパスと操作
+# 必須
+paths: {}
+
+# API全体にかけるセキュリティ
+security: []
+
+# API中で利用されるオブジェクトをコンポーネント化
+components: {}

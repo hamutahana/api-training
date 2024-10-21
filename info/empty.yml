@@ -1,0 +1,40 @@
+openapi: "3.0.3"
+
+# APIのメタデータ
+# 必須
+info:
+  # APIのタイトル
+  # 必須
+  title: "Empty API"
+  # APIの詳細（Markdown記法）
+  description: |
+    # Features
+    - Get users.
+    - Create user.
+  # APIのバージョン
+  # 必須
+  version: "1.0.0"
+  # 以下、一般公開用のAPIで必要な項目
+  # サービス利用規約のURL
+  termsOfService: "https://~"
+  # 連絡先情報
+  contact:
+    name: "Customer Support"
+    url: "https://~"
+    email: "support@sample.com"
+  # ライセンス
+  license:
+    # ライセンス名はSPDXを参考にする
+    # https://spdx.org/licenses/
+    name: "license name"
+    url: "https://~"
+
+servers: []
+
+tags: []
+
+paths: {}
+
+security: []
+
+components: {}

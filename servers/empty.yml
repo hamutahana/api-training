@@ -1,0 +1,27 @@
+openapi: "3.0.3"
+
+info:
+  title: "Empty API"
+  version: "1.0.0"
+
+# APIを提供するサーバーを定義
+servers:
+    # 接続先サーバーのURL
+    # 必須
+  - url: "https://api.sample.com/{version}"
+    description: "Production Environment"
+    variables:
+      version:
+        description: "API version"
+        enum: ["v1", "v2"]
+        # 変数のデフォルト値
+        # 変数定義時に必須
+        default: "v2"
+
+tags: []
+
+paths: {}
+
+security: []
+
+components: {}

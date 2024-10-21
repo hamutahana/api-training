@@ -1,0 +1,54 @@
+openapi: "3.0.3"
+
+info:
+  title: "Empty API"
+  version: "1.0.0"
+
+servers: []
+
+tags: []
+
+# APIが利用可能なパスと操作
+# 必須
+paths:
+  "/users/{userId}/message":
+    post:
+      # API操作の概要説明
+      summary: "Send new message"
+      # API操作の詳細説明
+      description: "Send new message"
+      # タグの付与
+      tags: ["users"]
+      # 廃止されているか
+      deprecated: false
+      parameters:
+        - name: userId
+          # query, path, header, cookie
+          in: path
+          required: true
+          description: "~"
+          schema: {}
+      requestBody:
+        description: "~"
+        required: true
+        content:
+          application/json:
+            schema: {}
+            example: "xxx"
+      responses:
+        # YAML-JSON互換性のためダブルクォーテーションで囲う
+        "201":
+          description: "Success response"
+          headers:
+            header_name:
+              description: "~"
+              schema: {}
+          content:
+            application/json:
+              schema: {}
+      security:
+        - sample_oauth2_auth: ["create_review"]
+
+security: []
+
+components: {}

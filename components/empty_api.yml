@@ -1,0 +1,30 @@
+openapi: "3.0.3"
+
+info:
+  title: "Empty API"
+  version: "1.0.0"
+
+servers: []
+
+tags: []
+
+paths:
+  "/xxx/{paramName}/yyy":
+    get:
+      parameters:
+      - $ref: "#/components/parameters/ParamName"
+      responses:
+        "200":
+          description: "Succes operation"
+
+security: []
+
+# API中で利用されるオブジェクトをコンポーネント化
+components:
+  parameters:
+    ParamName:
+      name: paramName
+      in: path
+      description: "~"
+      required: true
+      schema: {}
